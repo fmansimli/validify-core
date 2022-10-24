@@ -1,0 +1,32 @@
+{
+  "name": "@validify/core",
+  "version": "1.0.0",
+  "description": "validation package for js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "dev": "",
+    "build": "rm -rf dist/ && tsc",
+    "git": "git add . && git commit -m \"new version\"",
+    "pub": "npm run git && npm version patch && npm run build && npm publish --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fmansimli/validify-core.git"
+  },
+  "keywords": [
+    "validation",
+    "js",
+    "ts",
+    "react"
+  ],
+  "author": "Farid Mansimli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fmansimli/validify-core/issues"
+  },
+  "homepage": "https://github.com/fmansimli/validify-core#readme"
+}
