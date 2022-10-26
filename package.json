@@ -13,12 +13,12 @@
   "scripts": {
     "dev": "",
     "build": "rm -rf dist/ && tsc",
-    "git": "git add . && git commit -m \"new version\"",
-    "pub": "npm run git && npm run build && npm publish"
+    "git": "git add . && git commit -m \"new version ($npm_package_version)\" && git push origin master",
+    "pub": "npm run git"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fmansimli/validify-core.git"
+    "url": "git+https://github.com/fmansimli/validify-js-core.git"
   },
   "keywords": [
     "validation",
@@ -29,7 +29,7 @@
   "author": "Farid Mansimli",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fmansimli/validify-core/issues"
+    "url": "https://github.com/fmansimli/validify-js-core/issues"
   },
-  "homepage": "https://github.com/fmansimli/validify-core#readme"
+  "homepage": "https://github.com/fmansimli/validify-js-core#readme"
 }
