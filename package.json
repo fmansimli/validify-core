@@ -7,11 +7,14 @@
   "files": [
     "dist/**/*"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "",
     "build": "rm -rf dist/ && tsc",
     "git": "git add . && git commit -m \"new version\"",
-    "pub": "npm run git && npm run build && npm publish --access=public"
+    "pub": "npm run git && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
