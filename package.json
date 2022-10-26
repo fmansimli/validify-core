@@ -1,5 +1,5 @@
 {
-  "name": "validify",
+  "name": "@validify/core",
   "version": "1.0.0",
   "description": "validation package for js",
   "main": "dist/index.js",
