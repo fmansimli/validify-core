@@ -21,10 +21,10 @@
     "url": "git+https://github.com/fmansimli/validify-js-core.git"
   },
   "keywords": [
-    "validation",
-    "js",
-    "ts",
-    "react"
+    "javascript",
+    "typescript",
+    "nodejs",
+    "validation"
   ],
   "author": "Farid Mansimli",
   "license": "ISC",
