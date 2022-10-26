@@ -1,10 +1,10 @@
 //@ts-nocheck
 
-interface ISchema {
-  [key: string]: IConfig;
+export interface ISchema {
+  [key: string]: IPropType;
 }
 
-interface IConfig {
+export interface IPropType {
   required: boolean;
   email?: boolean;
   max?: number;
@@ -22,10 +22,18 @@ export class Schema {
     }
   }
 
+  rebuilt(schema: ISchema) {
+    for (const field in schema) {
+      this[field] = { ...this[field], ...schema[field] };
+    }
+    return this;
+  }
+
   validateField(field: string, entity: any) {
-    const { deafultMessage, valid } = checkFunc.bind(this, field, entity);
+    const { deafultMessage, valid } = checkFunc.call(this, field, entity);
+
     const message = this[field].message || deafultMessage;
-    return { message, ok: valid };
+    return { message, ok: valid, touched: true };
   }
 
   validate(entity: any) {
@@ -51,6 +59,9 @@ function checkFunc(field: string, entity: any) {
       const deafultMessage = `"${field}" is required!`;
       return { deafultMessage, valid: false };
     }
+  }
+  if (!this[field].required && !entity[field]) {
+    return { deafultMessage: "", valid: true };
   }
   if (this[field].email) {
     const pattern = /[\w]{3,}@[A-Za-z0-9]{3,}\.[A-Za-z]{2,}/;
