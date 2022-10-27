@@ -13,7 +13,6 @@ export interface IPropType {
   minLength?: number;
   pattern?: string;
   message?: string;
-  initialValue?: any;
 }
 
 export class Schema {
@@ -30,26 +29,16 @@ export class Schema {
     return this;
   }
 
-  init(values: any) {
-    for (const field in values) {
-      if (this.hasOwnProperty(field) && typeof values[field] !== "object") {
-        this[field].value = values[field];
-      }
-    }
-    return this;
-  }
-
   validateField(field: string, entity: any) {
     const { deafultMessage, valid } = checkFunc.call(this, field, entity);
-
     const message = this[field].message || deafultMessage;
-    return { message, ok: valid, touched: true };
+    return { message, ok: valid };
   }
 
   validate(entity: any) {
     let ok = true;
-    let errors: any = {};
-    let touched: any = {};
+    const data: any = {};
+    const errors: any = {};
 
     for (const field in this) {
       const { deafultMessage, valid } = checkFunc.call(this, field, entity);
@@ -57,21 +46,21 @@ export class Schema {
         errors[field] = this[field].message || deafultMessage;
         ok = false;
       }
-      touched[field] = true;
+      data[field] = entity[field];
     }
-    return { ok, errors: ok ? null : errors, data: entity, touched };
+    return { ok, data, errors };
   }
 }
 
 function checkFunc(field: string, entity: any) {
+  if (!this[field].required && !entity[field]) {
+    return { deafultMessage: "", valid: true };
+  }
   if (this[field].required) {
     if (!entity.hasOwnProperty(field)) {
       const deafultMessage = `"${field}" is required!`;
       return { deafultMessage, valid: false };
     }
-  }
-  if (!this[field].required && !entity[field]) {
-    return { deafultMessage: "", valid: true };
   }
   if (this[field].email) {
     const pattern = /[\w]{3,}@[A-Za-z0-9]{3,}\.[A-Za-z]{2,}/;
