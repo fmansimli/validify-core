@@ -13,6 +13,7 @@ export interface IPropType {
   minLength?: number;
   pattern?: string;
   message?: string;
+  initialValue?: any;
 }
 
 export class Schema {
@@ -25,6 +26,15 @@ export class Schema {
   rebuilt(schema: ISchema) {
     for (const field in schema) {
       this[field] = { ...this[field], ...schema[field] };
+    }
+    return this;
+  }
+
+  init(values: any) {
+    for (const field in values) {
+      if (this.hasOwnProperty(field) && typeof values[field] !== "object") {
+        this[field].value = values[field];
+      }
     }
     return this;
   }
