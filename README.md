@@ -1,1 +1,1 @@
-# @validify/core
+# @validify-js/core
