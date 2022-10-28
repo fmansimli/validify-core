@@ -6,6 +6,16 @@
 npm install --save @validify-js/core
 ```
 
+---
+
+**please, buy me a coffe to support this package**.
+
+## [![buy me a coffee](https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg)](https://www.buymeacoffee.com/faridmansimli)
+
+---
+
+### Table of contents
+
 1. [Creating Schema](#schema)
 2. [validating an object](#validating)
 3. [Using with NodeJS](#nodejs)
@@ -109,3 +119,11 @@ you might not belive, however, that's pretty much it, as simple as you see
 **you can reach me here:**
 
 [**Linkedin**](https://linkedin.com/in/faridmansimli) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Facebook**](https://facebook.com/fmansimli) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Twitter**](https://twitter.com/faridmansimli) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Instagram**](https://instagram.com/faridmansimli)
+
+---
+
+**please, buy me a coffe to support this package**.
+
+## [![buy me a coffee](https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg)](https://www.buymeacoffee.com/faridmansimli)
+
+---
