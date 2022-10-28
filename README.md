@@ -74,6 +74,11 @@ const loginHandler = (req, res, next) => {
 
   const { ok, data, errors} = loginSchema.validate(req.body);
 
+  // "ok" means req.body is valid , you are good to go!
+  // "data" includes property values
+  // "errors" includes the error messages of invalid fields , if exists
+
+
   try {
 
     if(!ok){
