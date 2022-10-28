@@ -70,7 +70,7 @@ const loginSchema = new Schema({
 
 // Express.js route handler
 
-const **loginHandler** = (req, res, next) => {
+const loginHandler = (req, res, next) => {
 
   const { ok, data, errors} = loginSchema.validate(req.body);
 
