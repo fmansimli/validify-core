@@ -11,7 +11,7 @@ export interface IPropType {
   min?: number;
   maxLength?: number;
   minLength?: number;
-  pattern?: string;
+  pattern?: RegExp;
   message?: string;
 }
 
