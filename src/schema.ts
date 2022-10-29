@@ -63,7 +63,7 @@ function checkFunc(field: string, entity: any) {
     }
   }
   if (this[field].email) {
-    const pattern = /[\w]{3,}@[A-Za-z0-9]{3,}\.[A-Za-z]{2,}/;
+    const pattern = /[\w]{2,}@[A-Za-z0-9]{3,}\.[A-Za-z]{2,}/g;
 
     if (!pattern.test(entity[field])) {
       const deafultMessage = `"${field}" is not a valid email address`;
@@ -95,7 +95,7 @@ function checkFunc(field: string, entity: any) {
     }
   }
   if (this[field].pattern) {
-    if (!this[field].pattern?.match(entity[field])) {
+    if (!this[field].pattern?.test(entity[field])) {
       const deafultMessage = `"${field}" doesn't match ${this[field].pattern}`;
       return { deafultMessage, valid: false };
     }
