@@ -1,1 +1,1 @@
-export { Schema, ISchema, IPropType } from "./schema";
+export { Schema, ISchema } from "./schema";
