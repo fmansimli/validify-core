@@ -38,9 +38,7 @@ export const user = new Schema({
     type: Array,
     required: true,
     minLength: 3,
-    message: "3 hobbies should be selected at least!",
-
-    // if you omit  the "message" field, default message will be displayed
+    message: "3 hobbies should be selected at least!", // if you omit  the "message" field, default message will be displayed
   },
   blocked: {
     type: Boolean,
