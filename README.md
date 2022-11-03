@@ -1,5 +1,7 @@
 ### Marvelous validation for JS / NodeJS
 
+---
+
 #### installation
 
 ```
@@ -23,42 +25,57 @@ npm install --save @validify-js/core
 #### an example of how to create a valid schema to validate an object: <a name="schema"></a>
 
 ```
+//keep in mind that "type" property must be specified!!! for example type:Number
+
 import { Schema } from "@validify-js/core";
 
-const userSchema = new Schema({
-  name: { required: false, minLength: 5 },
-  email: {
+export const user = new Schema({
+  name: { type: String, required: false, minLength: 7 },
+  email: { type: String, required: true, email: true },
+  gender: { type: String, required: true },
+  hobbies: {
+    type: Array,
     required: true,
-    email: true,
-    message: "email is required!"  // if you omit message field default message will be displayed
+    minLength: 3,
+    message: "3 hobbies should be selected at least!", // if you omit  the "message" field, default message will be displayed
+  },
+  blocked: {
+    type: Boolean,
+    required: false,
   },
   password: {
+    type: Number,
     required: true,
-    pattern: /[A-Za-z0-9]{8,}/g
+    pattern: /[A-Za-z0-9]{8,}/
   },
   age: {
+    type: Number,
     required: false,
     min: 18,
-    max: 30
+    max: 30,
+  },
+  profession: {
+    type: String,
+    required: true,
   },
 });
 
 ```
 
-**you can validate any object by using the schema wich we created above. for example:** <a name="validating"></a>
+#### **you can validate any object by using the schema wich we created above. for example:** <a name="validating"></a>
 
 ```
 const user = {
   name: "Farid",
-  surname: "Mansimli",
-  email: "farid@example.com"
+  email: "farid@example.com",
+  hobbies:["sky-diving", "soccer"],
+  age: 25
 };
 
 const { ok, data, errors } = userSchema.validate(user);
 
 // validation will be failed. (ok --> false),
-// because "password" field is required in the above schema.
-
+// because, a few fields are required in the above schema.
 
 ```
 
@@ -71,14 +88,16 @@ import { Schema } from "@validify-js/core";
 
 const loginSchema = new Schema({
   username: {
+    type: String,
     required: true,
     minLength: 5,
     maxLength: 15,
     message: "username is required!"
   },
   password: {
+    type: String,
     required: true,
-    pattern: /[A-Za-z0-9]{8,}/g
+    pattern: /[A-Za-z0-9]{8,}/
   }
 });
 
@@ -88,9 +107,9 @@ const loginHandler = (req, res, next) => {
 
   const { ok, data, errors} = loginSchema.validate(req.body);
 
-  // "ok" means req.body is valid , you are good to go!
+  // if "ok" is true, it means req.body is valid , you are good to go!
   // "data" includes property values
-  // "errors" includes the error messages of invalid fields , if exists
+  // "errors" includes the error messages of invalid fields, if exists
 
 
   try {

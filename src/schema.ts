@@ -5,7 +5,8 @@ export interface ISchema {
 }
 
 export interface IPropType {
-  required: boolean;
+  type?: TypedPropertyDescriptor;
+  required?: boolean;
   email?: boolean;
   max?: number;
   min?: number;
@@ -31,7 +32,7 @@ export class Schema {
 
   validateField(field: string, entity: any) {
     const { deafultMessage, valid } = checkFunc.call(this, field, entity);
-    const message = this[field].message || deafultMessage;
+    const message = valid ? "" : this[field].message || deafultMessage;
     return { message, ok: valid };
   }
 
@@ -57,13 +58,13 @@ function checkFunc(field: string, entity: any) {
     return { deafultMessage: "", valid: true };
   }
   if (this[field].required) {
-    if (!entity.hasOwnProperty(field)) {
+    if (!entity[field] || entity[field] === false) {
       const deafultMessage = `"${field}" is required!`;
       return { deafultMessage, valid: false };
     }
   }
   if (this[field].email) {
-    const pattern = /[\w]{2,}@[A-Za-z0-9]{3,}\.[A-Za-z]{2,}/g;
+    const pattern = /[\w]{2,}@[A-Za-z0-9]{3,}\.[A-Za-z]{2,}/;
 
     if (!pattern.test(entity[field])) {
       const deafultMessage = `"${field}" is not a valid email address`;
