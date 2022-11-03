@@ -25,7 +25,8 @@ npm install --save @validify-js/core
 #### an example of how to create a valid schema to validate an object: <a name="schema"></a>
 
 ```
-//keep in mind that "type" property must be specified!!! for example type:Number
+// keep in mind that "type" property must be specified!!!
+// for example type:Number
 
 import { Schema } from "@validify-js/core";
 
@@ -143,6 +144,6 @@ you might not belive, however, that's pretty much it, as simple as you see
 
 **please, buy me a coffe to support this package**.
 
-## [![buy me a coffee](https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg)](https://www.buymeacoffee.com/faridmansimli)
-
 ---
+
+## [![buy me a coffee](https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg)](https://www.buymeacoffee.com/faridmansimli)
