@@ -38,7 +38,9 @@ export const user = new Schema({
     type: Array,
     required: true,
     minLength: 3,
-    message: "3 hobbies should be selected at least!", // if you omit  the "message" field, default message will be displayed
+    message: "3 hobbies should be selected at least!",
+
+    // if you omit  the "message" field, default message will be displayed
   },
   blocked: {
     type: Boolean,
@@ -83,7 +85,8 @@ const { ok, data, errors } = userSchema.validate(user);
 ## how to use it with NodeJS ? that's amazingly easy <a name="nodejs"></a>
 
 ```
-// best practice! create the schema as a seperate file and import it to keep code clean.
+// best practice! create the schema as a seperate file
+// and import it to keep code clean.
 
 import { Schema } from "@validify-js/core";
 
