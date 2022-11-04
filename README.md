@@ -1,6 +1,8 @@
-# @validify-js/core &nbsp; ( JS/NodeJS )
+<br/>
 
-[![npm version](https://img.shields.io/npm/v/@validify-js/core)](https://www.npmjs.com/package/@validify-js/core) &nbsp; [![npm downloads/month](https://img.shields.io/npm/dm/@validify-js/core)](https://www.npmjs.com/package/@validify-js/core) &nbsp; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fmansimli/@validify-js/core/blob/master/LICENSE)
+# @validify-js/core &nbsp; =>> for JS / NodeJS
+
+[![npm version](https://img.shields.io/npm/v/@validify-js/core)](https://www.npmjs.com/package/@validify-js/core) &nbsp; [![npm downloads/month](https://img.shields.io/npm/dm/@validify-js/core)](https://www.npmjs.com/package/@validify-js/core) &nbsp; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fmansimli/validify-js-core/blob/master/LICENSE)
 
 #### installation
 
