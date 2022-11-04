@@ -1,6 +1,6 @@
 {
   "name": "@validify-js/core",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "validation package for JS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,6 +11,8 @@
     "access": "public"
   },
   "scripts": {
+    "local": "npm uninstall -g $npm_package_name && npm run build && npm link $npm_package_name",
+    "reinstall": "rm -rf node_modules/",
     "dev": "ts-node src/schema.ts",
     "build": "rm -rf dist/ && tsc",
     "git": "git add . && git commit -m \"$npm_package_name ($npm_package_version)\" && git push origin master",
