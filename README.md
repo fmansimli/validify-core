@@ -1,6 +1,6 @@
-### Marvelous validation for JS / NodeJS
+# @validify-js/core &nbsp; ( JS/NodeJS )
 
----
+[![npm version](https://img.shields.io/npm/v/@validify-js/core)](https://www.npmjs.com/package/@validify-js/core) &nbsp; [![npm downloads/month](https://img.shields.io/npm/dm/@validify-js/core)](https://www.npmjs.com/package/@validify-js/core) &nbsp; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fmansimli/@validify-js/core/blob/master/LICENSE)
 
 #### installation
 
@@ -24,7 +24,7 @@ npm install --save @validify-js/core
 
 #### an example of how to create a valid schema to validate an object: <a name="schema"></a>
 
-```
+```ts
 // keep in mind that "type" property must be specified!!!
 // for example type:Number
 
@@ -47,7 +47,7 @@ export const user = new Schema({
   password: {
     type: Number,
     required: true,
-    pattern: /[A-Za-z0-9]{8,}/
+    pattern: /[A-Za-z0-9]{8,}/,
   },
   age: {
     type: Number,
@@ -60,29 +60,27 @@ export const user = new Schema({
     required: true,
   },
 });
-
 ```
 
 #### **you can validate any object by using the schema wich we created above. for example:** <a name="validating"></a>
 
-```
+```ts
 const user = {
   name: "Farid",
   email: "farid@example.com",
-  hobbies:["sky-diving", "soccer"],
-  age: 25
+  hobbies: ["sky-diving", "soccer"],
+  age: 25,
 };
 
 const { ok, data, errors } = userSchema.validate(user);
 
 // validation will be failed. (ok --> false),
 // because, a few fields are required in the above schema.
-
 ```
 
 ## how to use it with NodeJS ? that's amazingly easy <a name="nodejs"></a>
 
-```
+```ts
 // best practice! create the schema as a seperate file
 // and import it to keep code clean.
 
@@ -94,41 +92,35 @@ const loginSchema = new Schema({
     required: true,
     minLength: 5,
     maxLength: 15,
-    message: "username is required!"
+    message: "username is required!",
   },
   password: {
     type: String,
     required: true,
-    pattern: /[A-Za-z0-9]{8,}/
-  }
+    pattern: /[A-Za-z0-9]{8,}/,
+  },
 });
 
 // Express.js route handler
 
 const loginHandler = (req, res, next) => {
-
-  const { ok, data, errors} = loginSchema.validate(req.body);
+  const { ok, data, errors } = loginSchema.validate(req.body);
 
   // if "ok" is true, it means req.body is valid , you are good to go!
   // "data" includes property values
   // "errors" includes the error messages of invalid fields, if exists
 
-
   try {
-
-    if(!ok){
+    if (!ok) {
       throw new Error("validation failed");
       error.errors = errors;
     }
 
     // do some stuff, and return response.
-
   } catch (error) {
     next(error);
   }
-
-}
-
+};
 ```
 
 you might not belive, however, that's pretty much it, as simple as you see
