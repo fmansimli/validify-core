@@ -22,7 +22,11 @@ npm install --save @validify-js/core
 2. [validating an object](#validating)
 3. [Using with NodeJS](#nodejs)
 
-#### an example of how to create a valid schema to validate an object: <a name="schema"></a>
+<br/>
+
+### <a name="schema">Creating Schema</a>
+
+**an example of how to create a valid schema to validate an object:**
 
 ```ts
 // keep in mind that "type" property must be specified!!!
@@ -62,7 +66,9 @@ export const user = new Schema({
 });
 ```
 
-#### **you can validate any object by using the schema wich we created above. for example:** <a name="validating"></a>
+#### <a name="validating">Validating an object</a>
+
+**you can validate any object by using the schema wich we created above. for example:**
 
 ```ts
 const user = {
@@ -78,7 +84,9 @@ const { ok, data, errors } = userSchema.validate(user);
 // because, a few fields are required in the above schema.
 ```
 
-## how to use it with NodeJS ? that's amazingly easy <a name="nodejs"></a>
+## <a name="nodejs">Using with NodeJS</a>
+
+**how to use it with NodeJS ? that's amazingly easy**
 
 ```ts
 // best practice! create the schema as a seperate file
@@ -130,6 +138,8 @@ you might not belive, however, that's pretty much it, as simple as you see
 ---
 
 **you can reach me here:**
+
+---
 
 [**Linkedin**](https://linkedin.com/in/faridmansimli) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Facebook**](https://facebook.com/fmansimli) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Twitter**](https://twitter.com/faridmansimli) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Instagram**](https://instagram.com/faridmansimli)
 
