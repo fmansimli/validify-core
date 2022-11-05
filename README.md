@@ -66,6 +66,8 @@ export const user = new Schema({
 });
 ```
 
+<br/>
+
 ### <a name="validating">Validating an object</a>
 
 you can validate any object by using the schema wich we created above. for example:
@@ -83,6 +85,8 @@ const { ok, data, errors } = userSchema.validate(user);
 // validation will be failed. (ok --> false),
 // because, a few fields are required in the above schema.
 ```
+
+<br/>
 
 ### <a name="nodejs">Using with NodeJS</a>
 
@@ -133,9 +137,13 @@ const loginHandler = (req, res, next) => {
 
 you might not belive, however, that's pretty much it, as simple as you see
 
+<br/>
+
 **that's pretty much it, guys!**
 
 ---
+
+<br/>
 
 **you can reach me here:**
 
@@ -145,8 +153,8 @@ you might not belive, however, that's pretty much it, as simple as you see
 
 ---
 
-**please, buy me a coffe to support this package**.
+<br/>
 
----
+**please, buy me a coffe to support this package**.
 
 ## [![buy me a coffee](https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg)](https://www.buymeacoffee.com/faridmansimli)
