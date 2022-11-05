@@ -26,7 +26,7 @@ npm install --save @validify-js/core
 
 ### <a name="schema">Creating Schema</a>
 
-**an example of how to create a valid schema to validate an object:**
+_an example of how to create a valid schema to validate an object:_
 
 ```ts
 // keep in mind that "type" property must be specified!!!
@@ -66,9 +66,9 @@ export const user = new Schema({
 });
 ```
 
-#### <a name="validating">Validating an object</a>
+### <a name="validating">Validating an object</a>
 
-**you can validate any object by using the schema wich we created above. for example:**
+_you can validate any object by using the schema wich we created above. for example:_
 
 ```ts
 const user = {
@@ -84,9 +84,9 @@ const { ok, data, errors } = userSchema.validate(user);
 // because, a few fields are required in the above schema.
 ```
 
-## <a name="nodejs">Using with NodeJS</a>
+### <a name="nodejs">Using with NodeJS</a>
 
-**how to use it with NodeJS ? that's amazingly easy**
+_how to use it with NodeJS ? that's amazingly easy_
 
 ```ts
 // best practice! create the schema as a seperate file
