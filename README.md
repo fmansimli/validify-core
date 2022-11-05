@@ -16,6 +16,8 @@ npm install --save @validify-js/core
 
 ---
 
+<br/>
+
 ### Table of contents
 
 1. [Creating Schema](#schema)
