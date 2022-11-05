@@ -14,8 +14,6 @@ npm install --save @validify-js/core
 
 ## [![buy me a coffee](https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg)](https://www.buymeacoffee.com/faridmansimli)
 
----
-
 <br/>
 
 ### Table of contents
@@ -126,8 +124,10 @@ const loginHandler = (req, res, next) => {
 
   try {
     if (!ok) {
-      throw new Error("validation failed");
+      const error = new Error("validation failed");
       error.errors = errors;
+
+      throw error;
     }
 
     // do some stuff, and return response.
