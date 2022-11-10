@@ -1,6 +1,6 @@
 {
   "name": "@validify-js/core",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "validation package for Javascript and NodeJS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
